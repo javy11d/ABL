@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadloaf</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<header class="hidden-sm hidden-md hidden-lg">
+    <div class="searchbox">
+        <form>
+            <h1 class="text-left">Breadloaf</h1>
+            <div class="searchbox"><i class="glyphicon glyphicon-search"></i>
+                <input class="form-control" type="text">
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"
+                    type="button">MENU <span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <li role="presentation"><a href="#">My Profile</a></li>
+                    <li class="divider" role="presentation"></li>
+                    <li role="presentation"><a href="#">Timeline </a></li>
+                    <li role="presentation" class="account"><a href="#">My Account</a></li>
+                    <li role="presentation"><a href="#">Login </a></li>
+                    <li role="presentation"><a href="#">Logout </a></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <hr>
+</header>
+<div>
+    <nav class="navbar navbar-default hidden-xs navigation-clean">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#"><i
+                        class="icon ion-ios-navigate"></i></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <form class="navbar-form navbar-left">
+                    <div class="searchbox"><i class="glyphicon glyphicon-search"></i>
+                        <input class="form-control" type="text">
+                    </div>
+                </form>
+                <ul class="nav navbar-nav hidden-md hidden-lg navbar-right">
+                    <li role="presentation"><a href="#">My Timeline</a></li>
+                    <li class="dropdown open"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"
+                            href="#">User <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li role="presentation" class="account"><a href="#">My Profile</a></li>
+                            <li class="divider" role="presentation"></li>
+                            <li role="presentation"><a href="#">Timeline </a></li>
+                            <li role="presentation"><a href="#">My Account</a></li>
+                            <li role="presentation"><a href="#">Login </a></li>
+                            <li role="presentation"><a href="#">Logout </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav hidden-xs hidden-sm navbar-right">
+                    <li class="active" role="presentation"><a href="#">Timeline</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"
+                            href="#">User <span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            <li role="presentation" class="account"><a href="#">My Profile</a></li>
+                            <li class="divider" role="presentation"></li>
+                            <li role="presentation"><a href="#">Timeline </a></li>
+                            <li role="presentation"><a href="#">Login </a></li>
+                            <li role="presentation"><a href="#">Logout </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<body>
+    <div class="login-clean">
+        <form method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="assets/img/ABL_logo2018.jpg" style="width: 223px;"></div>
+            <div class="form-group">
+                <input class="form-control" type="text" id="username" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" id="login" type="button" data-bs-hover-animate="shake">Log In</button>
+            </div><a href="#" class="forgot">Forgot your email or password?</a></form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/bs-animation.js"></script> -->
+    <script type="text/javascript">
+        $('#login').click(function() {
+
+                $.ajax({
+
+                        type: "POST",
+                        url: "api/auth",
+                        processData: false,
+                        contentType: "application/json",
+                        data: '{ "username": "'+ $("#username").val() +'", "password": "'+ $("#password").val() +'" }',
+                        success: function(r) {
+                                $('.account').html('<a href="./profile.php?username=' + $("#username").val() + '">My Profile</a>');
+                                console.log(r)
+                               
+                        },
+                        error: function(r) {
+                                setTimeout(function() {
+                                $('[data-bs-hover-animate]').removeClass('animated ' + $('[data-bs-hover-animate]').attr('data-bs-hover-animate'));
+                                }, 2000)
+                                $('[data-bs-hover-animate]').addClass('animated ' + $('[data-bs-hover-animate]').attr('data-bs-hover-animate'))
+                                console.log(r)
+                        }
+
+                });
+            });
+    </script>
+</body>
+
+</html>

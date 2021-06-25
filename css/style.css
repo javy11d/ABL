@@ -1,0 +1,150 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0px;
+    padding:  0px;
+    background-color: blanchedalmond;
+}
+.headerMenu{
+    background-color: cadetblue;
+    height: 180px;
+    border-bottom: 0px;
+    padding-left: auto;
+    padding-right : auto;
+    width: 100%
+}
+#wrapper{
+    background-color: cadetblue;
+    height: 180px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 1000px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.logo{
+    width: 125px;
+}
+.logo img{
+    width: 180px;
+    height: 180px;
+}
+.search_box{
+    background-color: cadetblue;
+    position: absolute;
+    top: 65px;
+    margin-left: 180px;
+}
+
+#search input[type="text"] {
+    background-color: khaki;
+    outline: none;
+    border: 0 none;
+    font: bold 25px Garamond, Helvetica, Sans-serif;
+    width: 350px;
+    padding: 15px 15px 15px 35px;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1), 0 1px 3px rgba(0,0,0,0.2) inset;
+    -moz-box-shadow : 0 1px 0 rgba(255,255,255,0.1), 0 1px 3px rgba(0,0,0,0.2) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1), 0 1px 3px rgba(0,0,0,0.2) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+#search input[type="text"]:focus {
+    background-color:lightgreen;
+    color: #6a6f75;
+    width: 350px;
+    -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1),0 1px 0 rgba(0,0,0,0.9) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.1), 0 1px 0 rgba(0,0,0,0.9) inset;
+    text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 1280px){
+    #menu {
+        background-color: cadetblue;
+        position: absolute;
+        top:0px;
+        right:0px;
+        height:60px;
+        padding-top:19px;
+        margin-right:4%;
+    }
+}
+@media screen and (min-width: 1280px){
+    #menu {
+        background-color: cadetblue;
+        position: absolute;
+        top:0px;
+        right:0px;
+        height:60px;
+        padding-top:19px;
+        margin-right:6%;
+    }
+}
+
+
+
+
+#menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 35px;
+    background-color: cadetblue;
+    padding-top: 19px;
+    padding-bottom: 22px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+#menu a:hover {
+    background-color: cornflowerblue;
+}
+
+h2{
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 25px;
+    padding: 8px;
+    color: forestgreen;
+
+}
+
+input[type="text"] {
+    background-color: white;
+    border: 1px solid #e2e2e2;
+    font-size: 18px;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    outline: none;
+}
+input[type="text"]:hover{
+    border: 1px solid forestgreen;
+}
+input[type="password"] {
+    background-color: white;
+    border: 1px solid #e2e2e2;
+    font-size: 18px;
+    padding: 5px;
+    width: 300px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    outline: none;
+}
+input[type="password"]:hover{
+    border: 1px solid forestgreen;
+}
+input[type="submit"]{
+    background-color: forestgreen;
+    border: 1px solid #00508d;
+    font-size: 15px;
+    color:white;
+    padding: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border-radius: 7px;
+
+
+}

@@ -2,7 +2,11 @@
 include('./classes/DB.php');
 include('./classes/Login.php');
 include('./classes/Post.php');
-
+function function_alert($message) {
+      
+    // Display the alert box 
+    echo "<script>alert('$message');</script>";
+}
 
 $username = "";
 if (isset($_GET['username'])) {
@@ -27,6 +31,8 @@ if (isset($_GET['username'])) {
                         $text = $_POST['postbody'];
                         $text = nl2br($text, false);
                         $text = str_replace(array("\n", "\r"), '', $text);
+                        function_alert(Login::isLoggedIn());
+                        function_alert($userid);
                         Post::createPost($text, Login::isLoggedIn(), $userid);
                 }
 

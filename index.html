@@ -34,8 +34,8 @@
                         <li class="divider" role="presentation"></li>
                         <li role="presentation"><a href="#">Timeline </a></li>
                         <li role="presentation" class="account"><a href="#">My Account</a></li>
-                        <li role="presentation"><a href="./login.php/">Login </a></li>
-                        <li role="presentation"><a href="./logout.php/">Logout </a></li>
+                        <li role="presentation"><a href="./login.php">Login </a></li>
+                        <li role="presentation"><a href="./logout.php">Logout </a></li>
                     </ul>
                 </div>
             </form>
@@ -68,8 +68,8 @@
                                 <li class="divider" role="presentation"></li>
                                 <li role="presentation"><a href="#">Timeline </a></li>
                                 <li role="presentation" class="account"><a href="#">My Account</a></li>
-                                <li role="presentation"><a href="./login.php/">Login </a></li>
-                                <li role="presentation"><a href="./logout.php/">Logout </a></li>
+                                <li role="presentation"><a href="./login.php">Login </a></li>
+                                <li role="presentation"><a href="./logout.php">Logout </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -81,8 +81,8 @@
                                 <li role="presentation" class="account"><a href="#">My Profile</a></li>
                                 <li class="divider" role="presentation"></li>
                                 <li role="presentation"><a href="#">Timeline </a></li>
-                                <li role="presentation"><a href="./login.php/">Login </a></li>
-                                <li role="presentation"><a href="./logout.php/">Logout </a></li>
+                                <li role="presentation"><a href="./login.php">Login </a></li>
+                                <li role="presentation"><a href="./logout.php">Logout </a></li>
                             </ul>
                         </li>
                     </ul>
@@ -168,7 +168,7 @@
                                                 console.log(r[i].body)
                                                 $('.autocomplete').html(
                                                         $('.autocomplete').html() +
-                                                        '<a href="profile.php?username='+r[i].username+'#'+r[i].id+'/"><li class="list-group-item"><span>'+r[i].body+'</span></li></a>'
+                                                        '<a href="./profile.php?username='+r[i].username+'#'+r[i].id+'"><li class="list-group-item"><span>'+r[i].body+'</span></li></a>'
                                                 )
                                         }
                                 },
@@ -189,7 +189,7 @@
                     var posts = JSON.parse(r)
                     $.each(posts, function (index) {
                         $('.timelineposts').html(
-                            $('.timelineposts').html() + '<blockquote><p>' + posts[index].PostBody + '</p><footer>Posted by <a href="profile.php?username='+posts[index].Username + '/">' + posts[index].PostedBy + ' </a>on ' + posts[index].PostDate + '<button class="btn btn-default" type="button" style="color:#eb3b60;background-image:url(&quot;none&quot;);background-color:transparent;"><button class="btn btn-default comment" data-postid="' + posts[index].PostId + '"type="button" style="color:#eb3b60;background-image:url(&quot;none&quot;);background-color:transparent;"><i class="fa fa-comments-o" style="color:yellow"></i><span style="color:#f9d616;"> Comments</span></button></footer></blockquote>'
+                            $('.timelineposts').html() + '<blockquote><p>' + posts[index].PostBody + '</p><footer>Posted by <a href="./profile.php?username='+posts[index].Username + '">' + posts[index].PostedBy + ' </a>on ' + posts[index].PostDate + '<button class="btn btn-default" type="button" style="color:#eb3b60;background-image:url(&quot;none&quot;);background-color:transparent;"><button class="btn btn-default comment" data-postid="' + posts[index].PostId + '"type="button" style="color:#eb3b60;background-image:url(&quot;none&quot;);background-color:transparent;"><i class="fa fa-comments-o" style="color:yellow"></i><span style="color:#f9d616;"> Comments</span></button></footer></blockquote>'
                         )
 
                         $('[data-postid]').click(function () {
@@ -214,7 +214,7 @@
                         });
 
                     })
-                    $('.account').html('<a href="./profile.php?username=' + posts[0].Username + '/">My Profile</a>');
+                    $('.account').html('<a href="./profile.php?username=' + posts[0].Username + '">My Profile</a>');
                 },
                 error: function (r) {
                     console.log(r)
